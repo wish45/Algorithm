@@ -8,6 +8,10 @@ public class WordPattern {
         String[] str = new String[s.length()];
         str =  s.split(" ");
 
+        if(str.length != pattern.length()){
+            return false;
+        }
+
         for(int i=0; i<pattern.length(); i++){
             char c = pattern.charAt(i);
             if(hash.containsKey(c)){
