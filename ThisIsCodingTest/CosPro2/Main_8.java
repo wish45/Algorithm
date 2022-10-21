@@ -23,7 +23,7 @@ public class Main_8 {
 
     // 아래는 테스트케이스 출력을 해보기 위한 main 메소드입니다. main 메소드는 잘못된 부분이 없으니, solution 메소드만 수정하세요.
     public static void main(String[] args) {
-        Main_82 sol = new Main_82();
+        Main_8 sol = new Main_8();
         int[] arr = {1, 2, 3, 4, 5, 6};
         int[] ret = sol.solution(arr);
 
