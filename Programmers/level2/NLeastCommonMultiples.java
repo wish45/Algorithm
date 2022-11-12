@@ -10,10 +10,10 @@ public class NLeastCommonMultiples {
      * */
     public static void main(String args[]){
         NLeastCommonMultiples asd = new NLeastCommonMultiples();
-        Integer[] arr = new Integer[]{2,6,8,14};
+        int[] arr = new int[]{2,6,8,14};
         System.out.println(asd.solution(arr));
     }
-    public int solution(Integer[] arr) {
+    public int solution(int[] arr) {
         int answer = arr[0];
 
         for(int i=0; i<arr.length; i++){
