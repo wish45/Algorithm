@@ -2,6 +2,7 @@ package level2;
 
 public class NationNumber124 {
     /**
+     * 124 나라의 숫자
      * 10진법이 아닌, 1,2,4만 허용되는 숫자를 만들어라
      * */
     public static void main(String args[]){
