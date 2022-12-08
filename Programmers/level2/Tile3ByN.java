@@ -1,6 +1,12 @@
 package level2;
 
 public class Tile3ByN {
+    /**
+     *  3 x n 타일링
+     * 가로 2, 세로1 인 직사각형으로,
+     * 가로 n ,세로 3인 공간을 채우는 경우의 수 구하기
+     * 
+     * */
     public static void main(String args[]){
         Tile3ByN asd = new Tile3ByN();
         System.out.println(asd.solution(4));
