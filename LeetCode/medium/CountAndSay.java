@@ -1,6 +1,10 @@
 package LeetCode.medium;
 
 public class CountAndSay {
+    public static void main(String args[]){
+        CountAndSay asd = new CountAndSay();
+        System.out.println(asd.countAndSay(4));
+    }
     public String countAndSay(int x) {
         if(x == 1) return "1";
         String s = countAndSay(x - 1);
