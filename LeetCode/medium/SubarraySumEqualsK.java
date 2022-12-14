@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SubarraySumEqualsK {
-
+    public static void main(String args[]){
+        SubarraySumEqualsK asd = new SubarraySumEqualsK();
+        int[] nums = new int[]{2,1,3};
+        System.out.println(asd.subarraySum(nums, 4));
+    }
     public int subarraySum(int[] nums, int k) {
         int c = 0;
         Map<Integer, Integer> map = new HashMap<>();
