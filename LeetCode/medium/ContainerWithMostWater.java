@@ -1,6 +1,11 @@
 package LeetCode.medium;
 
 class ContainerWithMostWater {
+    public static void main(String args[]){
+        ContainerWithMostWater asd = new ContainerWithMostWater();
+        int[] num = new int[]{1,8,6,2,5,4,8,3,7};
+        System.out.println(asd.maxArea(num));
+    }
     public int maxArea(int[] height) {
         int maxValue = 0;
 
