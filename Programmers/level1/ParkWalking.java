@@ -1,6 +1,8 @@
 package level1;
 
 import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class ParkWalking {
@@ -9,14 +11,17 @@ public class ParkWalking {
         //String[] park = new String[]{"SOO", "OOO", "OOO"};
         //String[] routes = new String[]{"E 2", "S 2", "W 1"};         //2,1
 
-        String[] park = new String[]{"SOO","OXX","OOO"};
-        String[] routes = new String[]{"E 2","S 2","W 1"};         //0,1
+        //String[] park = new String[]{"SOO","OXX","OOO"};
+        //String[] routes = new String[]{"E 2","S 2","W 1"};         //0,1
+
+        String[] park = new String[]{"OSO", "OOO", "OXO", "OOO"};
+        String[] routes = new String[]{"E 2", "S 3", "W 1"};         //0,1
 
         System.out.println(asd.solution(park, routes));
 
     }
 
-   public static int[] solution(String[] park, String[] routes) {
+  /* public static int[] solution(String[] park, String[] routes) {
        int[] currentPosition = findStartPoint(park);
 
        for (String route : routes) {
@@ -78,5 +83,57 @@ public class ParkWalking {
         int numCols = park[0].length();
 
         return row >= 0 && row < numRows && col >= 0 && col < numCols && park[row].charAt(col) != 'X';
+    }*/
+  public int[] solution(String[] park, String[] routes) {
+      int startX = 0;
+      int startY = 0;
+
+      char[][] grid = new char[park.length][park[0].length()];
+
+      for (int i = 0; i < park.length; i++) {
+          grid[i] = park[i].toCharArray();
+          if (park[i].contains("S")) {
+              startY = i;
+              startX = park[i].indexOf("S");
+          }
+      }
+
+      for (String route : routes) {
+          String[] parts = route.split(" ");
+          String direction = parts[0];
+          int steps = Integer.parseInt(parts[1]);
+
+          int newX = startX;
+          int newY = startY;
+
+          for (int i = 0; i < steps; i++) {
+              switch (direction) {
+                  case "E":
+                      newX++;
+                      break;
+                  case "W":
+                      newX--;
+                      break;
+                  case "S":
+                      newY++;
+                      break;
+                  case "N":
+                      newY--;
+                      break;
+              }
+
+              if (newX >= 0 && newY >= 0 && newY < grid.length && newX < grid[0].length) {
+                  if (grid[newY][newX] == 'X') {
+                      break;
+                  }
+                  if (i == steps - 1) {
+                      startX = newX;
+                      startY = newY;
+                  }
+              }
+          }
+      }
+
+      return new int[]{startY, startX};
     }
 }
